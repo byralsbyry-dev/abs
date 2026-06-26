@@ -1,0 +1,146 @@
+body {
+
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: white;
+    color: #3d3158;
+    text-align: center;
+
+}
+
+
+/* الهيدر */
+
+header {
+
+    background: #3d3158;
+    color: white;
+    padding: 20px;
+
+}
+
+
+header h1 {
+
+    margin: 10px;
+
+}
+
+
+
+/* القائمة */
+
+nav {
+
+    margin-top: 15px;
+
+}
+
+
+nav a {
+
+    color: white;
+    text-decoration: none;
+    margin: 12px;
+    font-size: 18px;
+
+}
+
+
+nav a:hover {
+
+    color: #ddd;
+
+}
+
+
+
+/* صفحة الخدمات */
+
+.services {
+
+    padding: 70px 20px;
+
+}
+
+
+.services h2 {
+
+    font-size: 38px;
+    margin-bottom: 20px;
+
+}
+
+
+.services p {
+
+    font-size: 20px;
+
+}
+
+
+
+/* الكروت */
+
+.card {
+
+    display: inline-block;
+    background: #3d3158;
+    color: white;
+
+    width: 25px;
+    padding: 25px;
+
+    margin: 20px;
+
+    border-radius: 12px;
+
+    transition: 0.3s;
+
+}
+
+
+
+.card:hover {
+
+    background: white;
+    color: #3d3158;
+
+    border: 2px solid #3d3158;
+
+}
+
+
+
+/* الفوتر */
+
+footer {
+
+    background: #3d3158;
+    color: white;
+
+    padding: 15px;
+
+    margin-top: 60px;
+
+}
+#result{
+
+margin-top:40px;
+
+background:#3d3158;
+
+color:white;
+
+padding:25px;
+
+border-radius:15px;
+
+}
+
+
+.card{
+
+cursor:pointer;
+
+}

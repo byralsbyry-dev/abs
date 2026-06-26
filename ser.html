@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<title>الخدمات</title>
+
+<link rel="stylesheet" href="ser.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>إدارة المهام اليومية</h1>
+
+<nav>
+
+<a href="main.html">الرئيسية</a>
+<a href="ser.html">الخدمات</a>
+<a href="about.html">من نحن</a>
+<a href="vis.html">رؤيتنا</a>
+<a href="contact.html">تواصل معنا</a>
+
+</nav>
+
+</header>
+
+
+
+<section class="services">
+
+
+<h2>إدارة المهام</h2>
+
+
+<input id="taskInput" type="text" placeholder="اكتب المهمة">
+
+<button onclick="addTask()">
+إضافة
+</button>
+
+
+
+<h3>
+نسبة الإنجاز:
+<span id="percent">0%</span>
+</h3>
+
+
+
+<ul id="taskList"></ul>
+
+
+
+</section>
+
+
+
+<footer>
+
+جميع الحقوق محفوظة © 2026
+
+</footer>
+
+
+
+
+<script>
+
+
+let tasks = [];
+
+
+
+function addTask(){
+
+
+let input = document.getElementById("taskInput");
+
+
+if(input.value==""){
+
+alert("اكتب المهمة أولاً");
+
+return;
+
+}
+
+
+
+tasks.push({
+
+name: input.value,
+
+done:false
+
+});
+
+
+
+input.value="";
+
+
+showTasks();
+
+
+}
+
+
+
+
+function showTasks(){
+
+
+let list = document.getElementById("taskList");
+
+
+list.innerHTML="";
+
+
+
+tasks.forEach((task,index)=>{
+
+
+let li=document.createElement("li");
+
+
+
+li.innerHTML = `
+
+${task.name}
+
+
+<button onclick="completeTask(${index})">
+إنجاز
+</button>
+
+
+<button onclick="deleteTask(${index})">
+حذف
+</button>
+
+`;
+
+
+
+if(task.done){
+
+li.style.textDecoration="line-through";
+
+}
+
+
+
+list.appendChild(li);
+
+
+
+});
+
+
+
+updateProgress();
+
+
+
+}
+
+
+
+
+function completeTask(index){
+
+
+tasks[index].done=true;
+
+
+showTasks();
+
+
+}
+
+
+
+
+
+function deleteTask(index){
+
+
+tasks.splice(index,1);
+
+
+showTasks();
+
+
+}
+
+
+
+
+function updateProgress(){
+
+
+let done = tasks.filter(task=>task.done).length;
+
+
+
+let result=0;
+
+
+
+if(tasks.length>0){
+
+result=Math.round((done/tasks.length)*100);
+
+}
+
+
+
+document.getElementById("percent").innerHTML=result+"%";
+
+
+}
+
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
